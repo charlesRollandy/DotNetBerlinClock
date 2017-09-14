@@ -1,3 +1,6 @@
+This is a .Net solution for the Berlin clock Kata coded in TDD with BDD.
+I tried to commit after each TDD steps.
+
 # The Berlin Clock
 
 The Berlin Uhr (Clock) is a rather strange way to show the time. On the top of the clock there is a yellow lamp that
