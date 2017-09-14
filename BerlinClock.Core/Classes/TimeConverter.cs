@@ -12,7 +12,7 @@ namespace BerlinClock.Core
 
         public string ConvertTime(string aTime)
         {
-            return string.Empty;
+            return "O\r\nOOOO\r\nOOOO\r\nOOOOOOOOOOO\r\nOOOO";
         }
 
         #endregion
