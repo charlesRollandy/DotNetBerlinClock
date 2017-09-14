@@ -43,5 +43,26 @@ namespace BerlinClock.UnitTests
             TimeConverter timeConverter = new TimeConverter();
             Assert.AreEqual("OOOO", timeConverter.ConvertHoursToTopHoursLampRow(0));
         }
+
+        [TestMethod]
+        public void Should_Every_Top_Hours_Row_Lamp_Be_Illuminated_When_Another_5_Hours_Have_Passed()
+        {
+            TimeConverter timeConverter = new TimeConverter();
+
+            Assert.AreEqual("OOOO", timeConverter.ConvertHoursToTopHoursLampRow(2));
+            Assert.AreEqual("OOOO", timeConverter.ConvertHoursToTopHoursLampRow(4));
+            Assert.AreEqual("ROOO", timeConverter.ConvertHoursToTopHoursLampRow(5));
+            Assert.AreEqual("ROOO", timeConverter.ConvertHoursToTopHoursLampRow(6));
+            Assert.AreEqual("ROOO", timeConverter.ConvertHoursToTopHoursLampRow(9));
+            Assert.AreEqual("RROO", timeConverter.ConvertHoursToTopHoursLampRow(10));
+            Assert.AreEqual("RROO", timeConverter.ConvertHoursToTopHoursLampRow(11));
+            Assert.AreEqual("RROO", timeConverter.ConvertHoursToTopHoursLampRow(14));
+            Assert.AreEqual("RRRO", timeConverter.ConvertHoursToTopHoursLampRow(15));
+            Assert.AreEqual("RRRO", timeConverter.ConvertHoursToTopHoursLampRow(16));
+            Assert.AreEqual("RRRO", timeConverter.ConvertHoursToTopHoursLampRow(19));
+            Assert.AreEqual("RRRR", timeConverter.ConvertHoursToTopHoursLampRow(20));
+            Assert.AreEqual("RRRR", timeConverter.ConvertHoursToTopHoursLampRow(21));
+            Assert.AreEqual("RRRR", timeConverter.ConvertHoursToTopHoursLampRow(23));
+        }
     }
 }
