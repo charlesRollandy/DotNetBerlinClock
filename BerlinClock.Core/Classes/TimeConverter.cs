@@ -12,7 +12,15 @@ namespace BerlinClock.Core
 
         public string ConvertTime(string aTime)
         {
-            return "O\r\nOOOO\r\nOOOO\r\nOOOOOOOOOOO\r\nOOOO";
+            int[] timeParts = aTime.Split(':').Select(n => Convert.ToInt32(n)).ToArray();
+
+            return string.Join("\r\n", new String[] {
+                ConvertSecondsToSecondsLampRow(timeParts[2]),
+                ConvertHoursToTopHoursLampRow(timeParts[0]),
+                ConvertHoursToBottomHoursLampRow(timeParts[0]),
+                ConvertMinutesToTopMinutesLampRow(timeParts[1]),
+                ConvertMinutesToBottomMinutesLampRow(timeParts[1])
+            });
         }
 
         #endregion
