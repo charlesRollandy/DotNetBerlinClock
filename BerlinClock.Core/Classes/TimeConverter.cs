@@ -57,5 +57,10 @@ namespace BerlinClock.Core
             }
             return lampsRowResult;
         }
+
+        public string ConvertMinutesToBottomMinutesLampRow(int p)
+        {
+            return string.Empty;
+        }
     }
 }
