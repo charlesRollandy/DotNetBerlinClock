@@ -117,5 +117,57 @@ namespace BerlinClock.UnitTests
         {
             Assert.AreEqual("OOOOOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(0));
         }
+
+        [TestMethod]
+        public void Should_Every_Third_Top_Minutes_Row_Lamp_Be_Illuminated_In_Red_When_Fifteen_Minutes_Have_Passed()
+        {
+            string converResultForFourteenMinutes = timeConverter.ConvertMinutesToTopMinutesLampRow(14);
+            string converResultForFifteenMinutes = timeConverter.ConvertMinutesToTopMinutesLampRow(15);
+            string converResultForSixteenMinutes = timeConverter.ConvertMinutesToTopMinutesLampRow(16);
+
+            string converResultForTwentyNineMinutes = timeConverter.ConvertMinutesToTopMinutesLampRow(29);
+            string converResultForThirtyMinutes = timeConverter.ConvertMinutesToTopMinutesLampRow(30);
+            string converResultForThirtyOneMinutes = timeConverter.ConvertMinutesToTopMinutesLampRow(31);
+
+            string converResultForFortyFourMinutes = timeConverter.ConvertMinutesToTopMinutesLampRow(44);
+            string converResultForFortyFiveMinutes = timeConverter.ConvertMinutesToTopMinutesLampRow(45);
+            string converResultForFortySixMinutes = timeConverter.ConvertMinutesToTopMinutesLampRow(46);
+
+            Assert.AreEqual("O", converResultForFourteenMinutes.Substring(2, 1));
+            Assert.AreEqual("O", converResultForFourteenMinutes.Substring(5, 1));
+            Assert.AreEqual("O", converResultForFourteenMinutes.Substring(8, 1));
+
+            Assert.AreEqual("R", converResultForFifteenMinutes.Substring(2, 1));
+            Assert.AreEqual("O", converResultForFifteenMinutes.Substring(5, 1));
+            Assert.AreEqual("O", converResultForFifteenMinutes.Substring(8, 1));
+
+            Assert.AreEqual("R", converResultForSixteenMinutes.Substring(2, 1));
+            Assert.AreEqual("O", converResultForSixteenMinutes.Substring(5, 1));
+            Assert.AreEqual("O", converResultForSixteenMinutes.Substring(8, 1));
+
+            Assert.AreEqual("R", converResultForTwentyNineMinutes.Substring(2, 1));
+            Assert.AreEqual("O", converResultForTwentyNineMinutes.Substring(5, 1));
+            Assert.AreEqual("O", converResultForTwentyNineMinutes.Substring(8, 1));
+
+            Assert.AreEqual("R", converResultForThirtyMinutes.Substring(2, 1));
+            Assert.AreEqual("R", converResultForThirtyMinutes.Substring(5, 1));
+            Assert.AreEqual("O", converResultForThirtyMinutes.Substring(8, 1));
+
+            Assert.AreEqual("R", converResultForThirtyOneMinutes.Substring(2, 1));
+            Assert.AreEqual("R", converResultForThirtyOneMinutes.Substring(5, 1));
+            Assert.AreEqual("O", converResultForThirtyOneMinutes.Substring(8, 1));
+
+            Assert.AreEqual("R", converResultForFortyFourMinutes.Substring(2, 1));
+            Assert.AreEqual("R", converResultForFortyFourMinutes.Substring(5, 1));
+            Assert.AreEqual("O", converResultForFortyFourMinutes.Substring(8, 1));
+
+            Assert.AreEqual("R", converResultForFortyFiveMinutes.Substring(2, 1));
+            Assert.AreEqual("R", converResultForFortyFiveMinutes.Substring(5, 1));
+            Assert.AreEqual("R", converResultForFortyFiveMinutes.Substring(8, 1));
+
+            Assert.AreEqual("R", converResultForFortySixMinutes.Substring(2, 1));
+            Assert.AreEqual("R", converResultForFortySixMinutes.Substring(5, 1));
+            Assert.AreEqual("R", converResultForFortySixMinutes.Substring(8, 1));
+        }
     }
 }
