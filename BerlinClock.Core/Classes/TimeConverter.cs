@@ -8,6 +8,13 @@ namespace BerlinClock.Core
 {
     public class TimeConverter : ITimeConverter
     {
+        private enum TimeParts
+        {
+            Hours = 0,
+            Minutes = 1,
+            Seconds = 2
+        }
+
         #region Global Time Conversion to Berlin Clock
 
         public string ConvertTime(string aTime)
@@ -15,11 +22,11 @@ namespace BerlinClock.Core
             int[] timeParts = aTime.Split(':').Select(n => Convert.ToInt32(n)).ToArray();
 
             return string.Join("\r\n", new String[] {
-                ConvertSecondsToSecondsLampRow(timeParts[2]),
-                ConvertHoursToTopHoursLampRow(timeParts[0]),
-                ConvertHoursToBottomHoursLampRow(timeParts[0]),
-                ConvertMinutesToTopMinutesLampRow(timeParts[1]),
-                ConvertMinutesToBottomMinutesLampRow(timeParts[1])
+                ConvertSecondsToSecondsLampRow(timeParts[(int)TimeParts.Seconds]),
+                ConvertHoursToTopHoursLampRow(timeParts[(int)TimeParts.Hours]),
+                ConvertHoursToBottomHoursLampRow(timeParts[(int)TimeParts.Hours]),
+                ConvertMinutesToTopMinutesLampRow(timeParts[(int)TimeParts.Minutes]),
+                ConvertMinutesToBottomMinutesLampRow(timeParts[(int)TimeParts.Minutes])
             });
         }
 
