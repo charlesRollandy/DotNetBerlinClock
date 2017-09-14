@@ -60,7 +60,7 @@ namespace BerlinClock.Core
 
         public string ConvertMinutesToBottomMinutesLampRow(int p)
         {
-            return string.Empty;
+            return "OOOO";
         }
     }
 }
