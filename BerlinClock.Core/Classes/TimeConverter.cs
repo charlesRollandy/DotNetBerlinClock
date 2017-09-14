@@ -16,5 +16,10 @@ namespace BerlinClock.Core
         {
             return (seconds % 2 == 0) ? "Y" : "O";
         }
+
+        public string ConvertHoursToTopHoursLampRow(int p)
+        {
+            return string.Empty;
+        }
     }
 }

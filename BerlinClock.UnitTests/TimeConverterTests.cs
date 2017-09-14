@@ -26,5 +26,15 @@ namespace BerlinClock.UnitTests
             Assert.AreEqual("O", timeConverter.ConvertSecondsToSecondsLampRow(31));
             Assert.AreEqual("O", timeConverter.ConvertSecondsToSecondsLampRow(59));
         }
+
+        [TestMethod]
+        public void Should_Top_Hours_Row_Have_Four_Lamps()
+        {
+            TimeConverter timeConverter = new TimeConverter();
+            for (int i = 0; i < 60; i++)
+            {
+                Assert.AreEqual(4, timeConverter.ConvertHoursToTopHoursLampRow(i).Length);
+            }
+        }
     }
 }
