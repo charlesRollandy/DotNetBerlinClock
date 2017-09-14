@@ -8,10 +8,16 @@ namespace BerlinClock.Core
 {
     public class TimeConverter : ITimeConverter
     {
+        #region Global Time Conversion to Berlin Clock
+
         public string convertTime(string aTime)
         {
             throw new NotImplementedException();
         }
+
+        #endregion
+
+        #region Unit Methods For Time Conversion To Berlin Clock
 
         public string ConvertSecondsToSecondsLampRow(int seconds)
         {
@@ -44,6 +50,10 @@ namespace BerlinClock.Core
             return ConvertIlluminatedLampsInARowToString(4, numberOfLightsIlluminated, LampsAreAlwaysYellow);
         }
 
+        #endregion
+
+        #region Private Methods
+
         private string LampsAreAlwaysRed(int lampNumber)
         {
             return "R";
@@ -68,5 +78,7 @@ namespace BerlinClock.Core
             }
             return lampsRowResult;
         }
+
+        #endregion
     }
 }
