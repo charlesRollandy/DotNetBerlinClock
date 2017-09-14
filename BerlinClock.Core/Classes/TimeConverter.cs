@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,35 +22,40 @@ namespace BerlinClock.Core
         {
             int numberOfLightsIlluminated = (hours - (hours % 5)) / 5;
 
-            return ConvertIlluminatedLampsInARowToString(4, numberOfLightsIlluminated);
+            return ConvertIlluminatedLampsInARowToString(4, numberOfLightsIlluminated, LampsAreAlwaysRed);
         }
 
         public string ConvertHoursToBottomHoursLampRow(int hours)
         {
             int numberOfLightsIlluminated = hours % 5;
 
-            return ConvertIlluminatedLampsInARowToString(4, numberOfLightsIlluminated);
+            return ConvertIlluminatedLampsInARowToString(4, numberOfLightsIlluminated, LampsAreAlwaysRed);
         }
 
         public string ConvertMinutesToTopMinutesLampRow(int minutes)
         {
             int numberOfLightsIlluminated = (minutes - (minutes % 5)) / 5;
-            string bottomHoursRowResult = string.Empty;
-            for (int i = 1; i <= 11; i++)
-            {
-                bottomHoursRowResult += (i <= numberOfLightsIlluminated) ? (i % 3 == 0 ? "R" : "Y") : "O";
-            }
-            return bottomHoursRowResult;
+            return ConvertIlluminatedLampsInARowToString(11, numberOfLightsIlluminated, LampAreRedWhenNumberIsDisisibleBy3AndYellowOtherwise);
         }
 
-        private string ConvertIlluminatedLampsInARowToString(int numberOfLampsInTheRow, int numberOfLightsIlluminated)
+        public string LampsAreAlwaysRed(int lampNumber)
         {
-            string bottomHoursRowResult = string.Empty;
+            return "R";
+        }
+
+        public string LampAreRedWhenNumberIsDisisibleBy3AndYellowOtherwise(int lampNumber)
+        {
+            return lampNumber % 3 == 0 ? "R" : "Y";
+        }
+
+        private string ConvertIlluminatedLampsInARowToString(int numberOfLampsInTheRow, int numberOfLightsIlluminated, Func<int, string> provideIlluminatedColor)
+        {
+            string lampsRowResult = string.Empty;
             for (int i = 1; i <= numberOfLampsInTheRow; i++)
             {
-                bottomHoursRowResult += (i <= numberOfLightsIlluminated) ? "R" : "O";
+                lampsRowResult += (i <= numberOfLightsIlluminated) ? provideIlluminatedColor(i) : "O";
             }
-            return bottomHoursRowResult;
+            return lampsRowResult;
         }
     }
 }
