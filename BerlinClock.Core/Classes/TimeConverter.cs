@@ -44,17 +44,17 @@ namespace BerlinClock.Core
             return ConvertIlluminatedLampsInARowToString(4, numberOfLightsIlluminated, LampsAreAlwaysYellow);
         }
 
-        public string LampsAreAlwaysRed(int lampNumber)
+        private string LampsAreAlwaysRed(int lampNumber)
         {
             return "R";
         }
 
-        public string LampsAreAlwaysYellow(int lampNumber)
+        private string LampsAreAlwaysYellow(int lampNumber)
         {
             return "Y";
         }
 
-        public string LampAreRedWhenNumberIsDisisibleBy3AndYellowOtherwise(int lampNumber)
+        private string LampAreRedWhenNumberIsDisisibleBy3AndYellowOtherwise(int lampNumber)
         {
             return lampNumber % 3 == 0 ? "R" : "Y";
         }
