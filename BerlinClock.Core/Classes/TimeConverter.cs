@@ -32,7 +32,15 @@ namespace BerlinClock.Core
 
         public string ConvertHoursToBottomHoursLampRow(int hours)
         {
-            return "OOOO";
+            int numberOfLightsIlluminated = hours % 5;
+
+            string bottomHoursRowResult = string.Empty;
+            for (int i = 1; i <= 4; i++)
+            {
+                bottomHoursRowResult += (i <= numberOfLightsIlluminated) ? "R" : "O";
+            }
+
+            return bottomHoursRowResult;
         }
     }
 }
