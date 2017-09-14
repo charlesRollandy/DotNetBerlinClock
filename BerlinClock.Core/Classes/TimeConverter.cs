@@ -21,25 +21,23 @@ namespace BerlinClock.Core
         {
             int numberOfLightsIlluminated = (hours - (hours % 5)) / 5;
 
-            string topHoursRowResult = string.Empty;
-            for (int i = 1; i <= 4; i++)
-            {
-                topHoursRowResult += (i <= numberOfLightsIlluminated) ? "R" : "O";
-            }
-
-            return topHoursRowResult;
+            return ConvertIlluminatedLampsInARowToString(numberOfLightsIlluminated);
         }
 
         public string ConvertHoursToBottomHoursLampRow(int hours)
         {
             int numberOfLightsIlluminated = hours % 5;
 
+            return ConvertIlluminatedLampsInARowToString(numberOfLightsIlluminated);
+        }
+
+        private string ConvertIlluminatedLampsInARowToString(int numberOfLightsIlliminated)
+        {
             string bottomHoursRowResult = string.Empty;
             for (int i = 1; i <= 4; i++)
             {
-                bottomHoursRowResult += (i <= numberOfLightsIlluminated) ? "R" : "O";
+                bottomHoursRowResult += (i <= numberOfLightsIlliminated) ? "R" : "O";
             }
-
             return bottomHoursRowResult;
         }
     }
