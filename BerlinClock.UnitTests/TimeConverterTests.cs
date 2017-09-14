@@ -169,5 +169,45 @@ namespace BerlinClock.UnitTests
             Assert.AreEqual("R", converResultForFortySixMinutes.Substring(5, 1));
             Assert.AreEqual("R", converResultForFortySixMinutes.Substring(8, 1));
         }
+
+        [TestMethod]
+        public void Should_Top_Minutes_Row_Lamps_Be_Illuminated_In_Yellow_When_Five_Minutes_Have_Passed_Unless_They_Are_The_Third_Sixth_Or_Ninth_Lamp()
+        {
+            Assert.AreEqual("OOOOOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(1));
+            Assert.AreEqual("OOOOOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(4));
+            Assert.AreEqual("YOOOOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(5));
+            Assert.AreEqual("YOOOOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(6));
+            Assert.AreEqual("YOOOOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(9));
+            Assert.AreEqual("YYOOOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(10));
+            Assert.AreEqual("YYOOOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(11));
+            Assert.AreEqual("YYOOOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(14));
+            Assert.AreEqual("YYROOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(15));
+            Assert.AreEqual("YYROOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(16));
+            Assert.AreEqual("YYROOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(19));
+            Assert.AreEqual("YYRYOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(20));
+            Assert.AreEqual("YYRYOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(21));
+            Assert.AreEqual("YYRYOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(24));
+            Assert.AreEqual("YYRYYOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(25));
+            Assert.AreEqual("YYRYYOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(26));
+            Assert.AreEqual("YYRYYOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(29));
+            Assert.AreEqual("YYRYYROOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(30));
+            Assert.AreEqual("YYRYYROOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(31));
+            Assert.AreEqual("YYRYYROOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(34));
+            Assert.AreEqual("YYRYYRYOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(35));
+            Assert.AreEqual("YYRYYRYOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(36));
+            Assert.AreEqual("YYRYYRYOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(39));
+            Assert.AreEqual("YYRYYRYYOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(40));
+            Assert.AreEqual("YYRYYRYYOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(41));
+            Assert.AreEqual("YYRYYRYYOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(44));
+            Assert.AreEqual("YYRYYRYYROO", timeConverter.ConvertMinutesToTopMinutesLampRow(45));
+            Assert.AreEqual("YYRYYRYYROO", timeConverter.ConvertMinutesToTopMinutesLampRow(46));
+            Assert.AreEqual("YYRYYRYYROO", timeConverter.ConvertMinutesToTopMinutesLampRow(49));
+            Assert.AreEqual("YYRYYRYYRYO", timeConverter.ConvertMinutesToTopMinutesLampRow(50));
+            Assert.AreEqual("YYRYYRYYRYO", timeConverter.ConvertMinutesToTopMinutesLampRow(51));
+            Assert.AreEqual("YYRYYRYYRYO", timeConverter.ConvertMinutesToTopMinutesLampRow(54));
+            Assert.AreEqual("YYRYYRYYRYY", timeConverter.ConvertMinutesToTopMinutesLampRow(55));
+            Assert.AreEqual("YYRYYRYYRYY", timeConverter.ConvertMinutesToTopMinutesLampRow(56));
+            Assert.AreEqual("YYRYYRYYRYY", timeConverter.ConvertMinutesToTopMinutesLampRow(59));
+        }
     }
 }
