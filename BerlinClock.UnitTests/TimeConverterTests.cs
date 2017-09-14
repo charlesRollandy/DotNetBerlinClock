@@ -81,5 +81,26 @@ namespace BerlinClock.UnitTests
         {
             Assert.AreEqual("OOOO", timeConverter.ConvertHoursToBottomHoursLampRow(0));
         }
+
+        [TestMethod]
+        public void Should_Every_Bottom_Hours_Row_Lamp_Be_Illuminated_When_Another_Hour_Has_Passed_And_Hours_Number_Is_Not_Divisible_By_Five()
+        {
+            Assert.AreEqual("RROO", timeConverter.ConvertHoursToBottomHoursLampRow(2));
+            Assert.AreEqual("RRRR", timeConverter.ConvertHoursToBottomHoursLampRow(4));
+            Assert.AreEqual("OOOO", timeConverter.ConvertHoursToBottomHoursLampRow(5));
+            Assert.AreEqual("ROOO", timeConverter.ConvertHoursToBottomHoursLampRow(6));
+            Assert.AreEqual("RRRR", timeConverter.ConvertHoursToBottomHoursLampRow(9));
+            Assert.AreEqual("OOOO", timeConverter.ConvertHoursToBottomHoursLampRow(10));
+            Assert.AreEqual("ROOO", timeConverter.ConvertHoursToBottomHoursLampRow(11));
+            Assert.AreEqual("RROO", timeConverter.ConvertHoursToBottomHoursLampRow(12));
+            Assert.AreEqual("RRRO", timeConverter.ConvertHoursToBottomHoursLampRow(13));
+            Assert.AreEqual("RRRR", timeConverter.ConvertHoursToBottomHoursLampRow(14));
+            Assert.AreEqual("OOOO", timeConverter.ConvertHoursToBottomHoursLampRow(15));
+            Assert.AreEqual("ROOO", timeConverter.ConvertHoursToBottomHoursLampRow(16));
+            Assert.AreEqual("RRRR", timeConverter.ConvertHoursToBottomHoursLampRow(19));
+            Assert.AreEqual("OOOO", timeConverter.ConvertHoursToBottomHoursLampRow(20));
+            Assert.AreEqual("ROOO", timeConverter.ConvertHoursToBottomHoursLampRow(21));
+            Assert.AreEqual("RRRO", timeConverter.ConvertHoursToBottomHoursLampRow(23));
+        }
     }
 }
