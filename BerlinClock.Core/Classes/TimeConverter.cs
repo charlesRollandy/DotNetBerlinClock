@@ -19,7 +19,7 @@ namespace BerlinClock.Core
 
         public string ConvertHoursToTopHoursLampRow(int p)
         {
-            return "    ";
+            return "OOOO";
         }
     }
 }
