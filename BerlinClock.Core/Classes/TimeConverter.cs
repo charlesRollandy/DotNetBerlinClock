@@ -14,9 +14,7 @@ namespace BerlinClock.Core
 
         public string ConvertSecondsToSecondsLampRow(int seconds)
         {
-            if (seconds % 2 == 0)
-                return "Y";
-            return "O";
+            return (seconds % 2 == 0) ? "Y" : "O";
         }
     }
 }
