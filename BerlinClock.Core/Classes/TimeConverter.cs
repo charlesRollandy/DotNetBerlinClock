@@ -30,9 +30,9 @@ namespace BerlinClock.Core
             return topHoursRowResult;
         }
 
-        public string ConvertHoursToBottomHoursLampRow(int p)
+        public string ConvertHoursToBottomHoursLampRow(int hours)
         {
-            return string.Empty;
+            return "OOOO";
         }
     }
 }
