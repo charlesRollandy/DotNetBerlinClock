@@ -11,5 +11,10 @@ namespace BerlinClock.Core
         {
             throw new NotImplementedException();
         }
+
+        public string ConvertSecondsToSecondsLampRow(int seconds)
+        {
+            return string.Empty;
+        }
     }
 }
