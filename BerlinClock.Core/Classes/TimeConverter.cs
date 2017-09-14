@@ -10,9 +10,9 @@ namespace BerlinClock.Core
     {
         #region Global Time Conversion to Berlin Clock
 
-        public string convertTime(string aTime)
+        public string ConvertTime(string aTime)
         {
-            throw new NotImplementedException();
+            return string.Empty;
         }
 
         #endregion

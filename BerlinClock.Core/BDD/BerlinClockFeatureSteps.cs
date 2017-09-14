@@ -21,7 +21,7 @@ namespace BerlinClock.Core
         [Then(@"the clock should look like")]
         public void ThenTheClockShouldLookLike(string theExpectedBerlinClockOutput)
         {
-            Assert.AreEqual(berlinClock.convertTime(theTime), theExpectedBerlinClockOutput);
+            Assert.AreEqual(theExpectedBerlinClockOutput, berlinClock.ConvertTime(theTime));
         }
 
     }

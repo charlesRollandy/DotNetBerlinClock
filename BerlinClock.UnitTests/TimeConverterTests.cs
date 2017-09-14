@@ -266,5 +266,20 @@ namespace BerlinClock.UnitTests
             Assert.AreEqual("YYYO", timeConverter.ConvertMinutesToBottomMinutesLampRow(58));
             Assert.AreEqual("YYYY", timeConverter.ConvertMinutesToBottomMinutesLampRow(59));
         }
+
+        [TestMethod]
+        public void Should_Berlin_Clock_Result_In_Five_Rows_With_One_Four_Four_Eleven_And_Four_Lamps_When_A_Time_Is_Converted()
+        {
+            Assert.AreEqual(5, timeConverter.ConvertTime("14:51:33").LineCount());
+        }
+    }
+
+    public static class HelperTestClass
+    {
+        public static int LineCount(this string str)
+        {
+            string[] lineSeparators = new string[] { "\r\n" };
+            return str.Split(lineSeparators, StringSplitOptions.None).Length;
+        }
     }
 }
