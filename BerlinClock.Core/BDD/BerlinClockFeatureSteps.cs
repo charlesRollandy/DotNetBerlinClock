@@ -3,7 +3,7 @@ using TechTalk.SpecFlow;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 
-namespace BerlinClock
+namespace BerlinClock.Core
 {
     [Binding]
     public class TheBerlinClockSteps

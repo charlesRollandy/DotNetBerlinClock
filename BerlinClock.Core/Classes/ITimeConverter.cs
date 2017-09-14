@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BerlinClock
+namespace BerlinClock.Core
 {
     public interface ITimeConverter
     {
