@@ -17,9 +17,17 @@ namespace BerlinClock.Core
             return (seconds % 2 == 0) ? "Y" : "O";
         }
 
-        public string ConvertHoursToTopHoursLampRow(int p)
+        public string ConvertHoursToTopHoursLampRow(int hours)
         {
-            return "OOOO";
+            int numberOfLightsIlluminated = (hours - (hours % 5)) / 5;
+
+            string topHoursRowResult = string.Empty;
+            for (int i = 1; i <= 4; i++)
+            {
+                topHoursRowResult += (i <= numberOfLightsIlluminated) ? "R" : "O";
+            }
+
+            return topHoursRowResult;
         }
     }
 }
