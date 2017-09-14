@@ -31,6 +31,11 @@ namespace BerlinClock.Core
             return ConvertIlluminatedLampsInARowToString(numberOfLightsIlluminated);
         }
 
+        public string ConvertMinutesToTopMinutesLampRow(int i)
+        {
+            return string.Empty;
+        }
+
         private string ConvertIlluminatedLampsInARowToString(int numberOfLightsIlliminated)
         {
             string bottomHoursRowResult = string.Empty;

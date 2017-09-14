@@ -102,5 +102,20 @@ namespace BerlinClock.UnitTests
             Assert.AreEqual("ROOO", timeConverter.ConvertHoursToBottomHoursLampRow(21));
             Assert.AreEqual("RRRO", timeConverter.ConvertHoursToBottomHoursLampRow(23));
         }
+
+        [TestMethod]
+        public void Should_Top_Minutes_Row_Have_Eleven_Lamps()
+        {
+            for (int i = 0; i < 60; i++)
+            {
+                Assert.AreEqual(11, timeConverter.ConvertMinutesToTopMinutesLampRow(i).Length);
+            }
+        }
+
+        [TestMethod]
+        public void Should_Top_Minutes_Row_Have_No_Lamp_Illuminated_When_Minute_Is_Zero()
+        {
+            Assert.AreEqual("OOOOOOOOOOO", timeConverter.ConvertMinutesToTopMinutesLampRow(0));
+        }
     }
 }
