@@ -36,5 +36,12 @@ namespace BerlinClock.UnitTests
                 Assert.AreEqual(4, timeConverter.ConvertHoursToTopHoursLampRow(i).Length);
             }
         }
+
+        [TestMethod]
+        public void Should_Top_Hours_Row_Have_No_Red_Lamp_Illuminated_When_Hour_Is_Zero()
+        {
+            TimeConverter timeConverter = new TimeConverter();
+            Assert.AreEqual("OOOO", timeConverter.ConvertHoursToTopHoursLampRow(0));
+        }
     }
 }
