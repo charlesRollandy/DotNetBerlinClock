@@ -38,9 +38,20 @@ namespace BerlinClock.Core
             return ConvertIlluminatedLampsInARowToString(11, numberOfLightsIlluminated, LampAreRedWhenNumberIsDisisibleBy3AndYellowOtherwise);
         }
 
+        public string ConvertMinutesToBottomMinutesLampRow(int minutes)
+        {
+            int numberOfLightsIlluminated = minutes % 5;
+            return ConvertIlluminatedLampsInARowToString(4, numberOfLightsIlluminated, LampsAreAlwaysYellow);
+        }
+
         public string LampsAreAlwaysRed(int lampNumber)
         {
             return "R";
+        }
+
+        public string LampsAreAlwaysYellow(int lampNumber)
+        {
+            return "Y";
         }
 
         public string LampAreRedWhenNumberIsDisisibleBy3AndYellowOtherwise(int lampNumber)
@@ -56,11 +67,6 @@ namespace BerlinClock.Core
                 lampsRowResult += (i <= numberOfLightsIlluminated) ? provideIlluminatedColor(i) : "O";
             }
             return lampsRowResult;
-        }
-
-        public string ConvertMinutesToBottomMinutesLampRow(int p)
-        {
-            return "OOOO";
         }
     }
 }
